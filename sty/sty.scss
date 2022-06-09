@@ -1,0 +1,49 @@
+.container{
+    background: rgb(218, 175, 205);
+}
+.footer{
+    background-color: aquamarine;
+}
+$dark-colour: #353535;
+$bright-colour: #009CD8;
+$light-grey: #eee;
+$header-font: Arial, Helvetica, sans-serif;
+//for breakpoints
+$small: 720px;
+$max-width: 1120px;
+
+@mixin cardStyle($font-color, $border-width, $border-color, $background) {
+  color: $font-color;
+  background-color: $background;
+  border: $border-width, $border-color, solid;
+}
+
+*,
+:before,
+:after {
+  box-sizing: border-box;
+}
+
+h1 {
+  font-family: $header-font;
+  color: $dark-colour;
+}
+.container {
+  max-width: $max-width;
+  margin: 0 auto;
+}
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.col {
+  @media screen and (min-width: $small)   {
+    width: 33%;
+  }
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  @include cardStyle($light-grey, 2px,    $dark-colour, $bright-colour);
+}
